@@ -38,8 +38,10 @@ class base_model_test(unittest.TestCase):
     def att_test(self):
         """ att test """
         obj = BaseModel()
+        obj2 = BaseModel()
         
         self.assertIsInstance(obj.id, str)
+        self.assertNotEqual(obj.id, obj2.id)
         self.assertIsInstance(obj.created_at, datetime)
         self.assertIsInstance(obj.updated_at, datetime)
         self.assertTrue(type(obj), object)
