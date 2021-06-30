@@ -18,12 +18,12 @@ from models.state import State
 from models.user import User
 
 class_list = {"Amenity": Amenity, "BaseModel": BaseModel, "City": City,
-            "Place": Place, "Review": Review, "State": State, "User": User}
+              "Place": Place, "Review": Review, "State": State, "User": User}
 
 
 class HBNBCommand(cmd.Cmd):
     """Simple command processor example."""
-    
+
     prompt = '(hbnb) '
 
     def do_EOF(self, line):
@@ -42,9 +42,8 @@ class HBNBCommand(cmd.Cmd):
         """blank line"""
         return False
 
-    #====================================================================================
-
     def do_create(self, arg):
+        """ create a new obj """
         if arg == "":
             print("** class name missing **")
             return
@@ -56,6 +55,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_show(self, arg):
+        """ list object """
         args = arg.strip().split(" ")
         if len(args) >= 1 and args[0] == '':
             print("** class name missing **")
@@ -68,13 +68,14 @@ class HBNBCommand(cmd.Cmd):
             return
 
         bus = args[0] + "." + args[1]
-        
+
         for key, val in models.storage.all().items():
             if bus == key:
                 print(val)
                 return
 
     def do_destroy(self, arg):
+        """ destroy object """
         args = arg.strip().split(" ")
         if len(args) >= 1 and args[0] == '':
             print("** class name missing **")
@@ -87,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         bus = args[0] + "." + args[1]
-        
+
         try:
             models.storage.all().pop(bus)
             models.storage.save()
@@ -95,6 +96,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, arg):
+        """ list all object """
         args = arg.strip().split(" ")
         obj = []
         if len(args) >= 1 and args[0] == '':
@@ -114,6 +116,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, arg):
+        """ update object """
         args = arg.strip().split(" ")
         if len(args) >= 1 and args[0] == '':
             print("** class name missing **")
