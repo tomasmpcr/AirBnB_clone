@@ -60,6 +60,13 @@ class base_model_test(unittest.TestCase):
         with open("file.json", "r") as f:
             self.assertIn(obj, f.read())
 
+    def file_test_save(self):
+        """ file_test_save2 """
+        obj = BaseModel()
+        obj.first_name = "-----"
+        obj.save()
+        self.assertNotEqual(obj.created_at, obj.updated_at)
+
     def to_dict_test(self):
         """ dict test """
         obj = BaseModel()
