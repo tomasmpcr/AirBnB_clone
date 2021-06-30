@@ -37,51 +37,5 @@ class docs_test(unittest.TestCase):
         """class doc"""
         self.assertTrue(len(BaseModel.__doc__) >= 1)
 
-
-class base_model_test(unittest.TestCase):
-    """ Base model test """
-    def att_test(self):
-        """ att test """
-        obj = BaseModel()
-        obj2 = BaseModel()
-        
-        self.assertIsInstance(obj.id, str)
-        self.assertNotEqual(obj.id, obj2.id)
-        self.assertIsInstance(obj.created_at, datetime)
-        self.assertIsInstance(obj.updated_at, datetime)
-        self.assertTrue(type(obj), object)
-        self.assertTrue(isinstance(obj, BaseModel))
-
-    def base_model_none_test(self):
-        """ Base model none test """
-        obj = BaseModel(None)
-        self.assertNotIn(None, obj.__dict__.values())
-
-    def file_test(self):
-        """ file json test """
-        obj = BaseModel()
-        obj.save()
-        obj = "BaseModel." + obj.id
-        with open("file.json", "r") as f:
-            self.assertIn(obj, f.read())
-
-    def file_test_save(self):
-        """ file_test_save2 """
-        obj = BaseModel()
-        obj.first_name = "-----"
-        obj.save()
-        self.assertNotEqual(obj.created_at, obj.updated_at)
-
-    def to_dict_test(self):
-        """ dict test """
-        obj = BaseModel()
-        dictionary_5 = obj.to_dict()
-        self.assertIsInstance(dictionary_5, dict)
-        self.assertEqual(obj.to_dict()["id"], obj.id)
-        self.assertEqual(obj.to_dict()["__class__"], "BaseModel")
-        obj.save()
-        dict_2 = obj.to_dict()
-        self.assertNotEqual(dictionary_5["updated_at"], dict_2["updated_at"])
-
 if __name__ == "__main__":
     unittest.main()
