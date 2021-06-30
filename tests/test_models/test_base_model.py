@@ -24,6 +24,11 @@ class pep8_test(unittest.TestCase):
 class docs_test(unittest.TestCase):
     """Base model document tests"""
 
+    @classmethod
+    def setUpClass(cls):
+        """Testing class"""
+        cls.base_funcs = inspect.getmembers(BaseModel, inspect.isfunction)
+
     def test_module_docstring(self):
         """module doc"""
         self.assertTrue(len(BaseModel.__doc__) >= 1)
