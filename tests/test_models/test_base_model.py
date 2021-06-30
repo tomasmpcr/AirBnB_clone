@@ -3,10 +3,6 @@
 import unittest
 from models.base_model import BaseModel
 import pep8
-from datetime import datetime
-import inspect
-import json
-
 
 #================================================================================
 # https://pep8.readthedocs.io/en/release-1.7.x/advanced.html
@@ -23,11 +19,6 @@ class pep8_test(unittest.TestCase):
 
 class docs_test(unittest.TestCase):
     """Base model document tests"""
-
-    @classmethod
-    def setUpClass(cls):
-        """Testing class"""
-        cls.base_funcs = inspect.getmembers(BaseModel, inspect.isfunction)
 
     def test_module_docstring(self):
         """module doc"""
