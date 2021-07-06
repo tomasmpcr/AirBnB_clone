@@ -1,5 +1,7 @@
 # AirBnB clone - The console
 
+<image src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210706T134848Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a343ab8f8321ea1066b574d96cee1903d22d4717cde209968ddbeed976d90c6a">
+
 _In this pre-project it is intended to clone an AirBnB only the console, it is expected to have a functional console that allows to add, delete and modify some records and these are saved in json allowing the information to be reloaded once the program is closed_
 
 ## Starting 🚀
@@ -59,6 +61,51 @@ _To run the AirBnB you just have to use the following command_
 
 ```
     ./console.py
+```
+
+## Commands available in the application 💻
+
+
+### The 'help' command will show you a list of available commands
+
+```
+    (hbnb) help
+```
+
+### The 'create' command is used to create a new instance
+
+```
+    (hbnb) create <class name>
+```
+
+### The 'delete' command is used to delete a instance
+
+```
+    (hbnb) destroy <class name> <object id>
+```
+
+### The 'update' command is used to update an attribute of an instance
+
+```
+    (hbnb) update <class name> <object id> <attribute name> <attribute value>
+```
+
+### The 'all' command can be used alone and will show all instances or put the name of a class in specific to filter
+
+```
+    (hbnb) all
+```
+
+or
+
+```
+    (hbnb) all <class_name>
+```
+
+### You can use the 'show' command to view a specific instance
+
+```
+    (hbnb) show <class name> <object id>
 ```
 
 ## Authors ✒️
