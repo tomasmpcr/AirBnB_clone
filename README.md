@@ -1,6 +1,6 @@
 # AirBnB clone - The console
 
-<image src="https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210706T134848Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a343ab8f8321ea1066b574d96cee1903d22d4717cde209968ddbeed976d90c6a">
+<image src="img/65f4a1dd9c51265f49d0.png">
 
 _In this pre-project it is intended to clone an AirBnB only the console, it is expected to have a functional console that allows to add, delete and modify some records and these are saved in json allowing the information to be reloaded once the program is closed_
 
